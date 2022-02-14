@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+
+{% block head %}
+    {% if title%}
+        <title>{{title}}</title>
+    {% endif %}
+{% endblock%}
+
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+       <form method="POST" class="form-register" style="color: white;">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="../../index.png" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                please create your account
+            </h1> 
+            <br>
+            {{ form.username.label()}}
+            {{ form.username(class="form-control",placeholder="Username")}}
+
+            {{ form.email.label()}}
+            {{ form.email(class="form-control",placeholder="Email")}}
+
+            {{ form.password.label()}}
+            {{ form.password(class="form-control",placeholder="password")}}
+
+            {{ form.password2.label()}}
+            {{ form.password2(class="form-control",placeholder="confirm password")}}
+            <br>
+            {{ form.submit(class="btn btn-lg btn-block btn-primary")}}
+
+       </form>
+
+   </div>
+</body>
+   
+{% endblock%}
